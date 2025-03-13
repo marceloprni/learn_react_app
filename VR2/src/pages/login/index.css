@@ -1,0 +1,21 @@
+.logo {
+    width: 100% ;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 10px;
+    color: var(--cor-principal)
+}
+
+.esqueci-senha{
+    text-align: right;
+    font-size: 12px;
+    text-decoration: none;
+    font-style: italic;
+    color: var(--cor-principal);
+}
+
+.esqueci-senha>a {
+    text-decoration: none;
+}
+
