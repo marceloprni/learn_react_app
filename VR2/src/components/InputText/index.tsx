@@ -5,7 +5,11 @@ const InputText = (props) => {
     return (
         <div>
             <label htmlFor={props.id}>{props.text}</label>
-            <Input id={props.id} placeholder={props.holder}/>
+            <Input id={props.id} 
+                    placeholder={props.holder} 
+                    onChange={props.callback}
+                    type={props.type}
+            />
         </div>
         
     )
