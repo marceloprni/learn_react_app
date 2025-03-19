@@ -1,10 +1,12 @@
 import React from 'react'
 import { NavBarPrincipal } from '../../styles/geral-styles'
 import { Link, useLocation } from 'react-router-dom'
+import { removerAutenticacao } from '../../utils/storage'
 
 const Menu = () => {
 
     const logout = () => {
+        removerAutenticacao()
         window.open("/login", "_self")
     }
 

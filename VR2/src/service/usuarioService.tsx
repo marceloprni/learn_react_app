@@ -10,6 +10,11 @@ const usuario = {
     }
 }
 
+const autenticado = {
+    token: 'sjkaklshuiqon-_(0123ksadjlksjd',
+    usuario: usuario
+}
+
 /*
 function login(email, senha) {
     return new Promise((resolve, reject) => {
@@ -26,7 +31,7 @@ function login(email, senha) {
         if( email  != "admin@admin.com" || senha != "123456") {
             return reject("Usuário ou senha invalidos!")
         }
-        return resolve(usuario)
+        return resolve(autenticado)
     })
 }    
 
