@@ -28,6 +28,9 @@ function login(email, senha) {
 
 function login(email, senha) {
     return new Promise((resolve, reject) => {
+        
+        email = email && email.toLowerCase();
+
         if( email  != "admin@admin.com" || senha != "123456") {
             return reject("Usuário ou senha invalidos!")
         }

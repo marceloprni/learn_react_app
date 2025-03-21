@@ -6,11 +6,11 @@ function salvarTOken(token: string) {
 }
 
 function obterToken() {
-    localStorage.getItem('token');
+  return  localStorage.getItem('token');
 }
 
 function removerAutenticacao() {
-    localStorage.clear()
+   localStorage.clear()
 }
 
 function salvarUsuario(usuario) {
@@ -25,7 +25,8 @@ function obterUsuario() {
 
 }
 
-export { salvarTOken, 
+export { 
+    salvarTOken, 
     obterToken, 
     removerAutenticacao,
     salvarUsuario,

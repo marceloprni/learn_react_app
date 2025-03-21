@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Input, Button } from "../../styles/form-styles";
 import { DivPersonalizada } from "../../styles/geral-styles";
 import "./index.css"
 import InputText from "../../components/InputText";
 import { login } from "../../service/usuarioService";
-import { salvarTOken, salvarUsuario } from '../../utils/storage'
+import { obterToken, salvarTOken, salvarUsuario } from '../../utils/storage'
 import Usuario from "../../models/Usuario";
 
 const Login = () => {
@@ -12,7 +12,21 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
 
+    useEffect(() => {
+        const token = obterToken();
+
+        if(token) {
+            window.open("/", "_self")
+        }
+    })
+
     const sendLogin= () => {
+
+        if(!email || !senha) {
+            alert("Favor  informar o email e senha.")
+            return;
+        }
+
         login(email, senha).then((response) => {
             console.log(response)
             const {token, usuario} = response;

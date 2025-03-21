@@ -9,6 +9,8 @@ import Login from "./pages/login";
 import Contato from "./pages/contato";
 import Sobre from "./pages/Sobre";
 
+import ControleDeProduto from "./pages/controleDeProdutos";
+
 const Router = () => (
     <BrowserRouter>
         <Menu />
@@ -18,6 +20,7 @@ const Router = () => (
             <Route path="/contato" element={<Contato />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/controle-de-produtos" element={<ControleDeProduto />} />
         </Routes>
     </BrowserRouter>
 )

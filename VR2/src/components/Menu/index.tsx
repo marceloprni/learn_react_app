@@ -17,6 +17,7 @@ const Menu = () => {
           <li><Link to={'/'}>Home</Link></li>
           <li><Link to={'/contato'}>Contato</Link></li>
           <li><Link to={'/sobre'}>Sobre</Link></li>
+          <li><Link to={'/controle-de-produtos'}>Controle de Produtos</Link></li>
           <li><a href="#" onClick={logout}>Sair</a></li>
         
       </NavBarPrincipal>
