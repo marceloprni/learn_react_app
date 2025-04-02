@@ -7,4 +7,8 @@ export default class Produto {
         this.quantidadeEstoque = obj.quantidadeEstoque;
         this.dataCadastro = obj.dataCadastro
     }
+
+    modeloValido() {
+        return !!this.nome;
+    }
 }

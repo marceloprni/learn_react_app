@@ -1,0 +1,35 @@
+
+h2.titulo {
+    margin-top: 15px;
+    color: #363636;
+}
+
+.buttonPrincipal {
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+.btn_principal {
+    background-color: var(--cor-terciaria);
+    height: 40px;
+    width: 80px;
+    color: #ffff;
+    border-radius: 10px;
+}
+
+.btn_principal:hover {
+    background-color: var(--cor-secundaria);
+}
+
+table.table {
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgb(50 50 50 / 82%);
+}
+
+table>thead {
+  font-weight: 600;
+  background: var(--cor-terciaria);
+  color: var(--cor-text);
+  
+}
+

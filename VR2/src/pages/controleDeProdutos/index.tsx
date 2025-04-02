@@ -5,28 +5,43 @@ import Produto from '../../models/Produto';
 
 const ControleDeProduto = () => {
 
-    const [ produto, setProduto] = useState(new Produto());
-    let produtos = []
+    //const [ produto, setProduto] = useState(new Produto());
+    const [ produtos, setProdutos ] = useState([]);
 
-    useEffect(() => {
+    const editarProduto = (p) => {
+        console.log(p);
+    }
+
+    const editarExcluir = (p) => {
+        console.log(p);
+    }
+
+    const obterTodosOsProdutos = () => { 
         obterTodos().
         then(
             (res) => { 
-             produtos = res.map( p => new Produto(p))
+             const produtosRetorno = res.map( p => new Produto(p))
+             setProdutos(produtosRetorno)
+             console.log(produtosRetorno) 
             })
         .catch((err) => {console.log(err)});
+    }
+
+    useEffect(() => {
+        obterTodosOsProdutos();
     }, []);
 
   return (
     <div className='container'>
         <div className='row'>
             <div className='col-sm-12'>
-                <h1>Controle de produtos</h1>
+                <h2 className='titulo'>Controle de produtos</h2>
                 <hr />
             </div>
-            <div className='col-sm-12'>
-                <button className='btn btn-primary'>Adicionar</button>
+            <div className='buttonPrincipal'>
+                <button className='btn_principal'>Adicionar</button>
             </div>
+
             <div className='col-sm-12'>
                 <table className='table table-striped table-hover'>
                     <thead >
@@ -36,6 +51,8 @@ const ControleDeProduto = () => {
                             <td>Quantidade</td>
                             <td>Valor</td>
                             <td>Data de Cadastro</td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </thead>
 
@@ -49,6 +66,8 @@ const ControleDeProduto = () => {
                                     <td>{p.quantidadeEstoque}</td>
                                     <td>{p.valor}</td>
                                     <td>{new Date(p.dataCadastro).toLocaleDateString()}</td>
+                                    <td><button className='btn btn-link' onClick={editarProduto}>Editar</button></td>
+                                    <td><button className='btn btn-link' onClick={editarExcluir}>Excluir</button></td>
                                 </tr>
                                 )
                             )
