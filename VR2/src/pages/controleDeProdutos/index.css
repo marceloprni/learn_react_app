@@ -33,3 +33,6 @@ table>thead {
   
 }
 
+div.modal-dialog {
+    max-width: 60%;
+}
