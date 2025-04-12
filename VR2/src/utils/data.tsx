@@ -1,23 +1,36 @@
 import moment from "moment";
 
-
-function aplicarMascaraData(data: string) {
-    if(data) {
+function aplicarMascaraEmDataIso(data){
+    if(data){
         return moment(data).locale('pt-br').format('DD/MM/YYYY');
     }
-
-    return data;
+    return undefined;
 }
 
-function aplicarMascaraDataHora(data: string) {
-    if(data) {
+function aplicarMascaraDateAmericanEmDataIso(data){
+    if(data){
+        return moment(data).locale('pt-br').format('YYYY-MM-DD');
+    }
+    return undefined;
+}
+function aplicarMascaraDataHoraEmDataIso(data){
+    if(data){
         return moment(data).locale('pt-br').format('DD/MM/YYYY HH:mm:ss');
     }
+    return undefined;
+}
 
-    return data;
+function aplicarMascaraISOEmDateAmerican(data){
+    if(data){
+        let novaData = moment(data).locale('pt-br').format('YYYY-MM-DD');
+        return novaData + 'T00:00:00';
+    }
+    return undefined;
 }
 
 export {
-    aplicarMascaraData,
-    aplicarMascaraDataHora
+    aplicarMascaraEmDataIso,
+    aplicarMascaraDataHoraEmDataIso,
+    aplicarMascaraDateAmericanEmDataIso,
+    aplicarMascaraISOEmDateAmerican
 }

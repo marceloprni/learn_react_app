@@ -1,24 +1,18 @@
-
-const mascaraDinheiroDuasCasa = (valor: number) => {
-    const valorFormatado = valor.toLocaleString('pt-BR', {
-        minimumFractionDigits:  2
-    });
-
-    return valorFormatado;
+function aplicarMascaraParaReal(valor){
+    if(isNaN(valor)){
+        return 0;
+    }
+    return Number(valor).toLocaleString('pr-BR', { minimumFractionDigits: 2 });
 }
 
-const mascaraDinheiroReal = (valor: number) => {
-    const valorFormatado = valor.toLocaleString('pt-BR', {
-        minimumFractionDigits:  2,
-        style: 'currency',
-        currency: 'BRL'
-    });
-
-    return valorFormatado;
+function aplicarMascaraParaRealComPrefixo(valor) {
+    if (isNaN(valor))
+      return 0;
+    return Number(valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
 }
 
 
-export {
-    mascaraDinheiroReal,
-    mascaraDinheiroDuasCasa
+export default {
+    aplicarMascaraParaReal,
+    aplicarMascaraParaRealComPrefixo
 }

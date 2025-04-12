@@ -1,14 +1,15 @@
 export default class Produto {
-    constructor(obj) {
+    constructor(obj){
         obj = obj || {};
+        
         this.id = obj.id;
-        this.nome = obj.nome;
+        this.nome = obj.nome ;
         this.valor = obj.valor;
         this.quantidadeEstoque = obj.quantidadeEstoque;
-        this.dataCadastro = obj.dataCadastro
+        this.dataCadastro = obj.dataCadastro;
     }
 
-    modeloValido() {
-        return !!this.nome;
+    modeloValido(){
+        return !!(this.nome);
     }
 }
